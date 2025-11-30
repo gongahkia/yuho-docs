@@ -6,10 +6,6 @@ site_description: A domain-specific language for simplifying legal reasoning
 site_author: Gabriel Ong 
 site_url: https://gabrielongzm.com/yuho
 
-# Repository
-repo_name: gongahkia/yuho-2
-repo_url: https://github.com/gongahkia/yuho-2
-edit_uri: edit/main/docs/
 
 # Copyright
 copyright: Copyright &copy; 2024 Gabriel Ong
@@ -22,16 +18,16 @@ theme:
     # Light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: indigo
-      accent: indigo
+      primary: black
+      accent: grey
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
     # Dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: indigo
-      accent: indigo
+      primary: grey
+      accent: white
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
@@ -54,7 +50,6 @@ theme:
     - content.tabs.link
   icon:
     repo: fontawesome/brands/github
-    logo: material/scale-balance
 
 # Extensions
 markdown_extensions:
@@ -143,8 +138,6 @@ nav:
       - Mermaid: transpilers/mermaid.md
       - Alloy: transpilers/alloy.md
   - Examples:
-      - Criminal Law: examples/criminal-law.md
-      - Cheating Offenses: examples/cheating.md
       - Custom Patterns: examples/patterns.md
   - Development:
       - Architecture: development/architecture.md

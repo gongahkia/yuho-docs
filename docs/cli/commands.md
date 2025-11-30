@@ -430,6 +430,6 @@ pip install -e . --force-reinstall
 
 - [REPL Guide](repl.md)
 - [Quick Start](../getting-started/quickstart.md)
-- [Examples](../examples/criminal-law.md)
+- [Examples](../examples/patterns.md)
 - [Language Syntax](../language/syntax.md)
 

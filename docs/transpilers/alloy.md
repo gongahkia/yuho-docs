@@ -664,5 +664,5 @@ yuho alloy examples/theft/theft_definition.yh -o docs/theft.als
 
 - [Mermaid Transpiler](mermaid.md) - Generate visual diagrams
 - [CLI Commands](../cli/commands.md) - Command-line interface
-- [Examples](../examples/criminal-law.md) - Legal examples
+- [Examples](../examples/patterns.md) - Legal examples
 - [Language Guide](../language/overview.md) - Yuho language reference

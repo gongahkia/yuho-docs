@@ -647,5 +647,5 @@ yuho draw examples/cheating/cheating_illustration_A.yh -f mindmap -o docs/cheati
 
 - [Alloy Transpiler](alloy.md) - Generate Alloy specifications
 - [CLI Commands](../cli/commands.md) - Command-line interface
-- [Examples](../examples/criminal-law.md) - Legal examples
+- [Examples](../examples/patterns.md) - Legal examples
 - [Language Guide](../language/overview.md) - Yuho language reference

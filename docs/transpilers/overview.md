@@ -416,5 +416,5 @@ Typical transpilation times (on modern hardware):
 - [Mermaid Transpiler Details](mermaid.md)
 - [Alloy Transpiler Details](alloy.md)
 - [CLI Commands](../cli/commands.md)
-- [Examples](../examples/criminal-law.md)
+- [Examples](../examples/patterns.md)
 

@@ -149,7 +149,7 @@ yuho draw cheating.yh --format flowchart -o cheating_flow.mmd
 Now that you've got the basics:
 
 1. [Learn the full syntax](../language/syntax.md)
-2. [Explore more examples](../examples/criminal-law.md)
+2. [Explore more examples](../examples/patterns.md)
 3. [Understand match-case patterns](../language/match-case.md)
 4. [Use the CLI effectively](../cli/commands.md)
 

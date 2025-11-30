@@ -464,7 +464,7 @@ Yuho is FOR:
 
 - Check the [documentation](../index.md)
 - Read the [syntax guide](../language/syntax.md)
-- See [examples](../examples/criminal-law.md)
+- See [examples](../examples/patterns.md)
 - Open a [GitHub issue](https://github.com/gongahkia/yuho-2/issues)
 
 ---

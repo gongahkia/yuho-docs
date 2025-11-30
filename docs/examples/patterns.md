@@ -639,7 +639,7 @@ match {
 - [Language Syntax](../language/syntax.md) - Complete Yuho reference
 - [CLI Commands](../cli/commands.md) - Command-line tools
 - [Transpilers](../transpilers/overview.md) - Generate diagrams and specifications
-- [Cheating Examples](cheating.md) - Specific legal examples
+- [Cheating Examples](patterns.md) - Specific legal examples
 
 ## Next Steps
 

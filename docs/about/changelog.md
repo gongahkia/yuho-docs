@@ -193,7 +193,7 @@ We welcome contributions to Yuho! See the [Contributing Guide](../development/co
 
 For help with Yuho:
 - Check the [documentation](../index.md)
-- Review [examples](../examples/criminal-law.md)
+- Review [examples](../examples/patterns.md)
 - Open a [GitHub issue](https://github.com/gongahkia/yuho-2/issues)
 - Read the [FAQ](faq.md)
 

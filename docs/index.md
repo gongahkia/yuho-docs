@@ -94,7 +94,7 @@ This code can then be:
 
     Explore real-world legal examples
 
-    [:octicons-arrow-right-24: See Examples](examples/criminal-law.md)
+    [:octicons-arrow-right-24: See Examples](examples/patterns.md)
 
 -   :material-api:{ .lg .middle } **API Reference**
 

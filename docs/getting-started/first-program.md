@@ -219,7 +219,7 @@ Now that you've written your first Yuho program:
 1. [Learn more about syntax](../language/syntax.md)
 2. [Explore Yuho types](../language/types.md)
 3. [Master match-case patterns](../language/match-case.md)
-4. [See real examples](../examples/criminal-law.md)
+4. [See real examples](../examples/patterns.md)
 
 ## Exercises
 
