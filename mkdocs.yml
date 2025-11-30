@@ -7,8 +7,8 @@ site_author: Gabriel Ong
 site_url: https://gabrielongzm.com/yuho
 
 # Repository
-repo_name: gongahkia/yuho
-repo_url: https://github.com/gongahkia/yuho
+repo_name: gongahkia/yuho-2
+repo_url: https://github.com/gongahkia/yuho-2
 edit_uri: edit/main/docs/
 
 # Copyright
@@ -169,7 +169,7 @@ extra:
     provider: mike
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/gongahkia/yuho
+      link: https://github.com/gongahkia/yuho-2
   generator: false
 
 # Extra CSS and JavaScript

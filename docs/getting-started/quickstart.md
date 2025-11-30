@@ -183,5 +183,5 @@ pip install -e .
 - Use `yuho --help` for command-line help
 - Use `yuho how` for usage examples
 - Check [FAQ](../about/faq.md) for common questions
-- Visit [GitHub Issues](https://github.com/gongahkia/yuho/issues) for support
+- Visit [GitHub Issues](https://github.com/gongahkia/yuho-2/issues) for support
 

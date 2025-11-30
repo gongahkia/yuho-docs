@@ -1,35 +1,44 @@
 # Installation
 
-This guide will help you install Yuho on your system.
+This guide will help you install Yuho-2 on your system.
 
 ## Prerequisites
 
 Before installing Yuho, ensure you have:
 
-- **Python 3.8 or higher**
-- **pip** (Python package manager)
+- **Rust 1.70 or higher** (for building from source)
+- **Cargo** (Rust package manager, comes with Rust)
 - **Git** (for development installation)
 
-### Check Python Version
+### Check Rust Version
 
 ```bash
-python --version
-# or
-python3 --version
+rustc --version
+cargo --version
 ```
 
-You should see output like `Python 3.11.x` or higher.
+You should see output like `rustc 1.70.x` or higher.
+
+### Install Rust
+
+If you don't have Rust installed:
+
+```bash
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+
+Or visit [rustup.rs](https://rustup.rs/) for platform-specific instructions.
 
 ## Installation Methods
 
-=== "Production (pip)"
+=== "Production (cargo)"
 
-    ### Install from PyPI (Recommended)
+    ### Install from Crates.io (Recommended)
 
-    Once published, you can install Yuho directly from PyPI:
+    Once published, you can install Yuho directly from crates.io:
 
     ```bash
-    pip install yuho
+    cargo install yuho
     ```
 
     Verify the installation:
@@ -47,21 +56,21 @@ You should see output like `Python 3.11.x` or higher.
     1. Clone the repository:
 
     ```bash
-    git clone https://github.com/gongahkia/yuho.git
-    cd yuho
+    git clone https://github.com/gongahkia/yuho-2.git
+    cd yuho-2
     ```
 
-    2. Install in editable mode:
+    2. Build and install:
 
     ```bash
-    pip install -e .
+    cargo build --release
+    cargo install --path .
     ```
 
-    Or with development dependencies:
+    Or for development (debug mode):
 
     ```bash
-    pip install -r requirements-dev.txt
-    pip install -e .
+    cargo build
     ```
 
     3. Verify installation:
@@ -74,7 +83,7 @@ You should see output like `Python 3.11.x` or higher.
 
     ### Using Docker
 
-    The easiest way to run Yuho without installing Python:
+    The easiest way to run Yuho without installing Rust:
 
     1. Pull the image (once available):
 
@@ -85,8 +94,8 @@ You should see output like `Python 3.11.x` or higher.
     Or build locally:
 
     ```bash
-    git clone https://github.com/gongahkia/yuho.git
-    cd yuho
+    git clone https://github.com/gongahkia/yuho-2.git
+    cd yuho-2
     docker build -t yuho:latest .
     ```
 
@@ -97,7 +106,7 @@ You should see output like `Python 3.11.x` or higher.
     docker run --rm -v $(pwd):/workspace yuho:latest check example.yh
 
     # Start REPL
-    docker run --rm -it yuho:latest yuho-repl
+    docker run --rm -it yuho:latest yuho repl
     ```
 
     3. Using docker-compose:
@@ -125,62 +134,68 @@ yuho --version
 yuho --help
 
 # Try the REPL
-yuho-repl
+yuho repl
 ```
 
-You should see output indicating Yuho v3.0.0 or later.
+You should see output indicating Yuho v2.0.0 or later.
 
 ## Development Setup
 
 If you plan to contribute to Yuho:
 
-1. Clone and install:
+1. Clone and build:
 
 ```bash
-git clone https://github.com/gongahkia/yuho.git
-cd yuho
-pip install -r requirements-dev.txt
-pip install -e .
+git clone https://github.com/gongahkia/yuho-2.git
+cd yuho-2
+cargo build
 ```
 
-2. Install pre-commit hooks:
+2. Run tests:
 
 ```bash
-pre-commit install
+cargo test
 ```
 
-3. Run tests:
+3. Check code quality:
 
 ```bash
-pytest
+cargo clippy
+cargo fmt --check
 ```
 
-4. Check code quality:
+4. Build documentation:
 
 ```bash
-black yuho_v3/
-flake8 yuho_v3/
-mypy yuho_v3/
+cargo doc --open
 ```
 
 ## Platform-Specific Notes
 
 ### Linux
 
-Installation should work out of the box on most distributions.
+Rust installation should work out of the box on most distributions. You may need to install additional dependencies:
+
+```bash
+# Ubuntu/Debian
+sudo apt-get install build-essential
+
+# Fedora
+sudo dnf install gcc
+```
 
 ### macOS
 
-Use Homebrew to install Python if needed:
+Rust works great on macOS. Ensure you have Xcode Command Line Tools:
 
 ```bash
-brew install python@3.11
+xcode-select --install
 ```
 
 ### Windows
 
-1. Install Python from [python.org](https://www.python.org/downloads/)
-2. Ensure "Add Python to PATH" is checked during installation
+1. Install Rust from [rustup.rs](https://rustup.rs/)
+2. Install Visual Studio C++ Build Tools
 3. Use PowerShell or Command Prompt for commands
 
 ## Troubleshooting
@@ -189,28 +204,34 @@ brew install python@3.11
 
 If `yuho` command is not found after installation:
 
-1. Check if Python scripts directory is in PATH:
+1. Check if Cargo's bin directory is in PATH:
 
 ```bash
-python -m site --user-base
+echo $PATH | grep .cargo/bin
 ```
 
-2. Add the scripts directory to your PATH
-
-### Permission errors
-
-On Linux/macOS, you might need:
+2. Add Cargo's bin directory to your PATH:
 
 ```bash
-pip install --user yuho
+# Add to ~/.bashrc or ~/.zshrc
+export PATH="$HOME/.cargo/bin:$PATH"
 ```
 
-Or use a virtual environment:
+### Build errors
+
+If you encounter build errors:
+
+1. Update Rust to the latest version:
 
 ```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-pip install yuho
+rustup update
+```
+
+2. Clean build artifacts and rebuild:
+
+```bash
+cargo clean
+cargo build --release
 ```
 
 ### Docker issues
@@ -221,6 +242,14 @@ Ensure Docker is running:
 docker --version
 docker ps
 ```
+
+### Z3 Solver Issues
+
+If Z3 integration is not working:
+
+1. Ensure Z3 is installed on your system
+2. Check Z3 is in your PATH
+3. Refer to Z3 installation documentation
 
 ## Next Steps
 

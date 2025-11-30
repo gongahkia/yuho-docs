@@ -425,7 +425,7 @@ struct Offense {
 Explore more examples in the repository:
 
 - `example/cheating/` - Multiple cheating scenarios (A through K)
-- See [GitHub Repository](https://github.com/gongahkia/yuho/tree/main/example)
+- See [GitHub Repository](https://github.com/gongahkia/yuho-2/tree/main/examples)
 
 ---
 

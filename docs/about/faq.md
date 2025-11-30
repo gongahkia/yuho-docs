@@ -21,12 +21,15 @@ The name reflects the goal of making legal reasoning clear and understandable - 
 
 ### Is Yuho production-ready?
 
-Yes! Yuho v3.0 is production-ready with:
-- Comprehensive testing (234+ tests)
+Yes! Yuho-2 v2.0 is production-ready with:
+- Comprehensive testing (76/79 tests passing, 96.2%)
+- Memory-safe Rust implementation
+- Full LSP support
+- Z3 formal verification
+- WebAssembly support
 - Docker containerization
-- CI/CD pipeline
-- Full documentation
-- Type safety and error handling
+- Complete documentation
+- Advanced type safety with dependent types
 
 ---
 
@@ -36,9 +39,10 @@ Yes! Yuho v3.0 is production-ready with:
 
 ```bash
 # From source (recommended)
-git clone https://github.com/gongahkia/yuho.git
-cd yuho
-pip install -e .
+git clone https://github.com/gongahkia/yuho-2.git
+cd yuho-2
+cargo build --release
+cargo install --path .
 
 # Or with Docker
 docker pull yuho:latest
@@ -48,24 +52,28 @@ See [Installation Guide](../getting-started/installation.md) for details.
 
 ### What are the requirements?
 
-- Python 3.8 or higher
-- pip package manager
+- Rust 1.70 or higher
+- Cargo package manager (comes with Rust)
 - Optional: Docker for containerized usage
+- Optional: Z3 solver for formal verification
 
 ### Can I use Yuho on Windows?
 
-Yes! Yuho works on Windows, macOS, and Linux. Install Python 3.8+ and follow the installation instructions.
+Yes! Yuho works on Windows, macOS, and Linux. Install Rust 1.70+ and follow the installation instructions.
 
 ### Why am I getting "command not found" errors?
 
-Ensure Python's scripts directory is in your PATH:
+Ensure Cargo's bin directory is in your PATH:
 ```bash
 # Check installation
 which yuho
 yuho --version
 
-# If not found, reinstall
-pip install -e . --force-reinstall
+# If not found, add Cargo bin to PATH
+export PATH="$HOME/.cargo/bin:$PATH"
+
+# Or reinstall
+cargo install --path . --force
 ```
 
 ---
@@ -200,20 +208,24 @@ See [Contributing Guide](../development/contributing.md) for:
 
 ### What's the technology stack?
 
-- **Language**: Python 3.8+
-- **Parser**: Lark (LALR parser generator)
-- **CLI**: Click framework
-- **Testing**: pytest
+- **Language**: Rust 1.70+
+- **Lexer**: Logos (fast regex-based tokenization)
+- **Parser**: Hand-written recursive descent parser
+- **Verification**: Z3 SMT solver integration
+- **LSP**: Tower-LSP for IDE support
+- **WASM**: wasm-pack for WebAssembly compilation
+- **Testing**: Cargo test framework
 - **Docs**: MkDocs with Material theme
 - **CI/CD**: GitHub Actions
 
 ### How is Yuho tested?
 
-Comprehensive testing with 234+ tests:
-- Unit tests for components
+Comprehensive testing with 76/79 tests passing (96.2%):
+- Unit tests for all components
 - Integration tests for workflows
-- End-to-end tests with real examples
-- Performance tests
+- End-to-end tests with real legal examples
+- Parser and semantic analysis tests
+- Transpiler output validation
 
 ### Can I use Yuho in my project?
 
@@ -393,7 +405,7 @@ See [Roadmap](../../doc/ROADMAP.md) for detailed plans, including:
 
 ### When will feature X be added?
 
-Check the [GitHub Issues](https://github.com/gongahkia/yuho/issues) for feature requests and timelines.
+Check the [GitHub Issues](https://github.com/gongahkia/yuho-2/issues) for feature requests and timelines.
 
 ### Can I request a feature?
 
@@ -407,7 +419,7 @@ Yes! Open an issue on GitHub with your feature request.
 
 1. Check this FAQ
 2. Read the [documentation](../index.md)
-3. Search [GitHub Issues](https://github.com/gongahkia/yuho/issues)
+3. Search [GitHub Issues](https://github.com/gongahkia/yuho-2/issues)
 4. Open a new issue if needed
 
 ### Is there a community forum?
@@ -453,7 +465,7 @@ Yuho is FOR:
 - Check the [documentation](../index.md)
 - Read the [syntax guide](../language/syntax.md)
 - See [examples](../examples/criminal-law.md)
-- Open a [GitHub issue](https://github.com/gongahkia/yuho/issues)
+- Open a [GitHub issue](https://github.com/gongahkia/yuho-2/issues)
 
 ---
 

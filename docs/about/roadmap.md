@@ -4,77 +4,80 @@ Future development plans and upcoming features for Yuho.
 
 ## Overview
 
-This roadmap outlines the planned development of Yuho v3.0 and future versions, focusing on legal accuracy, user experience, and technical improvements.
+This roadmap outlines the planned development of Yuho-2 and future versions, focusing on legal accuracy, user experience, and technical improvements.
 
 ## Current Status
 
-### Yuho v3.0 (Current)
+### Yuho-2 v2.0 (Current)
 
-- ✅ **Core Language** - Basic syntax and semantics
-- ✅ **CLI Tools** - Command-line interface
-- ✅ **Transpilers** - Mermaid and Alloy generation
+- ✅ **Core Language** - Advanced syntax with dependent types and generics
+- ✅ **CLI Tools** - 13 production-ready commands
+- ✅ **Transpilers** - 7 target formats (Mermaid, Alloy, JSON, LaTeX, English, TypeScript, Gazette)
+- ✅ **Formal Verification** - Z3 SMT solver integration
+- ✅ **IDE Support** - Full LSP implementation
+- ✅ **WebAssembly** - Browser-compatible compilation
 - ✅ **Documentation** - Comprehensive user guides
-- ✅ **Testing** - Unit and integration tests
+- ✅ **Testing** - 76/79 tests passing (96.2%)
 
-## Short-term Goals (Q1 2024)
+## Short-term Goals (2024 Q2-Q3)
 
 ### Language Enhancements
 
-- **Advanced Type System**
-  - Union types with better syntax
-  - Generic types for reusable patterns
-  - Type inference improvements
-  - Custom type constructors
+- **Type System Refinements**
+  - Additional dependent types
+  - Better type inference for complex expressions
+  - Improved generic type constraints
+  - Custom type validation rules
 
-- **Enhanced Syntax**
-  - Pattern matching improvements
-  - Better error messages
-  - Syntax highlighting support
-  - Code completion
+- **Enhanced Error Messages**
+  - More detailed diagnostic information
+  - Suggested fixes for common errors
+  - Better position tracking in multi-file projects
+  - IDE-friendly error formats
 
 ### Legal Features
 
-- **Legal Validation**
-  - Automated legal accuracy checking
-  - Legal precedent integration
-  - Statute cross-referencing
-  - Legal consistency validation
+- **Legal Domain Expansion**
+  - Contract law support
+  - Administrative law patterns
+  - Constitutional law structures
+  - International law templates
 
 - **Legal Examples**
   - More comprehensive legal examples
-  - Real-world case studies
+  - Real-world case studies across multiple jurisdictions
   - Legal pattern library
-  - Best practice guides
+  - Best practice guides from legal experts
 
 ### Developer Experience
 
-- **IDE Support**
-  - VS Code extension
-  - Syntax highlighting
-  - IntelliSense support
-  - Error highlighting
+- **IDE Extensions**
+  - VS Code extension improvements
+  - Neovim plugin enhancements
+  - Emacs mode refinements
+  - IntelliJ IDEA support
 
 - **Documentation**
   - Interactive tutorials
-  - Video guides
-  - Legal case studies
-  - API documentation
+  - Video walkthrough guides
+  - In-depth legal case studies
+  - API documentation with examples
 
-## Medium-term Goals (Q2-Q3 2024)
+## Medium-term Goals (2024 Q4 - 2025 Q1)
 
 ### Advanced Features
 
-- **Module System**
-  - Import/export functionality
-  - Namespace management
-  - Dependency resolution
-  - Code organization
+- **Package Manager**
+  - Crates.io integration for distribution
+  - Dependency management system
+  - Version resolution
+  - Publishing workflows
 
-- **Advanced Transpilers**
+- **Additional Transpilers**
   - Python code generation
-  - JavaScript output
-  - JSON/YAML export
+  - Rust code generation
   - GraphViz diagrams
+  - OpenAPI specifications
 
 ### Legal Integration
 
@@ -104,7 +107,7 @@ This roadmap outlines the planned development of Yuho v3.0 and future versions, 
   - Distributed analysis
   - Cloud integration
 
-## Long-term Goals (Q4 2024+)
+## Long-term Goals (2025+)
 
 ### Advanced Legal Features
 
@@ -284,23 +287,23 @@ This roadmap outlines the planned development of Yuho v3.0 and future versions, 
 
 ## Implementation Timeline
 
-### Phase 1: Foundation (Q1 2024)
-- Core language improvements
-- Basic legal validation
-- Enhanced documentation
-- Developer tools
-
-### Phase 2: Expansion (Q2-Q3 2024)
-- Advanced features
-- Legal integration
-- Performance optimization
+### Phase 1: Stabilization (2024 Q2-Q3)
+- Bug fixes and stability improvements
+- Documentation enhancements
+- Developer tooling improvements
 - Community building
 
-### Phase 3: Innovation (Q4 2024+)
+### Phase 2: Expansion (2024 Q4 - 2025 Q1)
+- Advanced features
+- Legal domain expansion
+- Performance optimization
+- Package ecosystem development
+
+### Phase 3: Innovation (2025+)
 - AI integration
 - Advanced legal features
 - Platform expansion
-- Ecosystem development
+- Ecosystem maturity
 
 ## Success Metrics
 

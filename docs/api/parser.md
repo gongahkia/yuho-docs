@@ -448,7 +448,7 @@ def parse_directory_parallel(directory, max_workers=4):
 
 ## Source Code
 
-**Location**: `yuho_v3/parser.py`
+**Location**: `yuho-parser/src/parser.rs`
 
-**View on GitHub**: [parser.py](https://github.com/gongahkia/yuho/blob/main/yuho_v3/parser.py)
+**View on GitHub**: [parser.rs](https://github.com/gongahkia/yuho-2/blob/main/yuho-parser/src/parser.rs)
 

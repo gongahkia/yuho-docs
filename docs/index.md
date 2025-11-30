@@ -139,7 +139,7 @@ This code can then be:
 
 ## Technology Stack
 
-**Yuho Version 2** is a complete rewrite in Rust, featuring:
+**Yuho-2** is built in Rust from the ground up, featuring:
 
 - **Rust 1.70+**: Memory-safe, high-performance implementation
 - **Logos**: Fast lexical analysis with regex-based tokenization
@@ -151,13 +151,13 @@ This code can then be:
 
 **Performance**: 14,000+ lines of Rust, 76/79 tests passing (96.2%), production-ready core features.
 
-## What's New in Version 2
+## What Makes Yuho-2 Special
 
-**Major improvements** over the original Python implementation:
+**Built from the ground up in Rust** for performance, safety, and modern tooling:
 
 1. **10x faster** parsing and semantic analysis with Rust
 2. **Generic types** and type aliases for better abstraction
-3. **7 transpilation targets** (up from 2)
+3. **7 transpilation targets** for maximum flexibility
 4. **Full LSP support** with real-time diagnostics
 5. **WebAssembly** for browser deployment
 6. **Z3 integration** for SMT-based verification
