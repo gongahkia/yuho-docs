@@ -43,12 +43,21 @@ percent penalty := 100%; // Evaluates to 1.00
 ```
 
 #### Money (`money`)
-Currency values with `$` prefix:
+Currency values with currency-specific types:
 
 ```yh
+// Basic money type
 money fine := $500.00;
 money salary := $50,000.00;
-money largeAmount := $1,000,000.00;
+
+// Currency-specific money types (NEW in v2)
+money<SGD> singaporeFine := $500.00;
+money<USD> americanFine := $500.00;
+money<EUR> europeanFine := $500.00;
+money<GBP> britishFine := $500.00;
+
+// Prevents mixing currencies
+// money<SGD> total := singaporeFine + americanFine;  // Error: currency mismatch
 ```
 
 ### Text Types
@@ -89,6 +98,153 @@ Time periods with day/month/year suffixes:
 duration sentence := 5 years;
 duration probation := 2 years 6 months;
 duration remand := 30 days;
+```
+
+## Dependent Types (Version 2)
+
+Dependent types allow you to specify constraints and refinements on types for stronger guarantees.
+
+### BoundedInt<min, max>
+
+Integer types with compile-time range constraints:
+
+```yh
+// Age must be between 0 and 150
+BoundedInt<0, 150> age := 25;
+
+// Percentage must be between 0 and 100
+BoundedInt<0, 100> percentage := 75;
+
+// Legal voting age
+BoundedInt<18, 120> voterAge := 21;
+
+// This would cause a compile error:
+// BoundedInt<0, 100> invalid := 150;  // Error: value out of range
+```
+
+### Positive<T>
+
+Ensures numeric values are always positive:
+
+```yh
+// Positive integers only
+Positive<int> count := 10;
+Positive<int> population := 5000000;
+
+// Positive floats only
+Positive<float> rate := 3.5;
+Positive<float> percentage := 0.25;
+
+// This would cause an error:
+// Positive<int> invalid := -5;  // Error: value must be positive
+```
+
+### NonEmpty<T>
+
+Ensures collections or strings are never empty:
+
+```yh
+// Non-empty string
+NonEmpty<string> name := "John Doe";
+NonEmpty<string> title := "Contract";
+
+// Non-empty array
+NonEmpty<Array<string>> witnesses := ["Alice", "Bob"];
+NonEmpty<Array<int>> scores := [85, 90, 95];
+
+// This would cause an error:
+// NonEmpty<string> invalid := "";  // Error: value cannot be empty
+```
+
+### Array<T>
+
+Generic array types for collections:
+
+```yh
+// Array of strings
+Array<string> names := ["Alice", "Bob", "Charlie"];
+
+// Array of integers
+Array<int> ages := [25, 30, 35];
+
+// Array of custom types
+Array<Person> defendants := [person1, person2];
+
+// Nested arrays
+Array<Array<int>> matrix := [[1, 2], [3, 4]];
+```
+
+### ValidDate
+
+Date types with optional before/after constraints:
+
+```yh
+// Date with minimum constraint
+ValidDate<after="01-01-2020"> recentDate := 15-06-2024;
+
+// Date with maximum constraint
+ValidDate<before="31-12-2025"> futureDate := 01-12-2024;
+
+// Date with both constraints
+ValidDate<after="01-01-2020", before="31-12-2025"> boundedDate := 15-06-2024;
+
+// This would cause an error:
+// ValidDate<after="01-01-2020"> invalid := 15-12-2019;  // Error: date too early
+```
+
+### Temporal<T, valid_from, valid_until>
+
+Time-bound values that are only valid within specific date ranges:
+
+```yh
+// Law valid from a specific date
+Temporal<string, valid_from="01-01-2020"> newLaw := "Updated regulation text";
+
+// Temporary provision with expiry
+Temporal<bool, valid_from="01-01-2020", valid_until="31-12-2025"> temporaryRule := true;
+
+// Contract validity period
+Temporal<Contract, valid_from="01-01-2024", valid_until="31-12-2024"> yearlyContract := contractData;
+```
+
+### Citation<section, subsection, act>
+
+Structured legal citation types:
+
+```yh
+// Singapore Penal Code citation
+Citation<"415", "1", "Penal Code"> cheatingProvision;
+
+// Companies Act citation
+Citation<"157", "", "Companies Act"> directorsduty;
+
+// Multi-subsection citation
+Citation<"300", "a", "Penal Code"> murderProvision;
+
+// Verifies citation exists and format is correct
+```
+
+### Where Clauses
+
+Add field-level constraints to any type:
+
+```yh
+struct Contract {
+    // Money constraint
+    money<SGD> amount where amount > 0 && amount <= 1000000,
+
+    // Integer constraint
+    BoundedInt<1, 10> parties where parties >= 2,
+
+    // Date constraint
+    date signed_date where signed_date > "01-01-2020",
+
+    // String constraint
+    string status where status in ["active", "pending", "completed"],
+
+    // Positive constraint
+    Positive<float> interest_rate where interest_rate < 0.15,
+}
 ```
 
 ## Custom Types
