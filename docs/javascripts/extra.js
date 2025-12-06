@@ -48,12 +48,23 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Mermaid configuration
+    // Mermaid configuration - Initialize after library loads
     if (typeof mermaid !== 'undefined') {
         mermaid.initialize({
             startOnLoad: true,
             theme: 'default',
             securityLevel: 'loose',
+        });
+    } else {
+        // Wait for Mermaid to load if not immediately available
+        window.addEventListener('load', function() {
+            if (typeof mermaid !== 'undefined') {
+                mermaid.initialize({
+                    startOnLoad: true,
+                    theme: 'default',
+                    securityLevel: 'loose',
+                });
+            }
         });
     }
 
