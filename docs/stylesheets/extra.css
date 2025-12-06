@@ -86,9 +86,14 @@ th {
     z-index: 1000;
 }
 
-/* Dark mode support for GitHub corner */
+/* Match GitHub corner background to navbar */
+.github-corner svg {
+    fill: var(--md-primary-fg-color);
+}
+
+/* Ensure proper colors in dark mode */
 [data-md-color-scheme="slate"] .github-corner svg {
-    fill: #424242 !important;
+    fill: var(--md-primary-fg-color);
 }
 
 .github-corner:hover .octo-arm {
