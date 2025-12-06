@@ -1,0 +1,169 @@
+/* Extra CSS for Yuho documentation */
+
+/* Custom colors and branding - Monochrome */
+:root {
+    --yuho-primary: #000000;
+    --yuho-accent: #666666;
+    --yuho-code-bg: #f5f5f5;
+}
+
+/* Code blocks */
+.highlight {
+    border-radius: 4px;
+    margin: 1em 0;
+}
+
+/* Yuho code highlighting */
+.language-yh {
+    background-color: var(--yuho-code-bg);
+}
+
+/* Cards for feature highlights */
+.grid.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.grid.cards > div {
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    transition: all 0.3s ease;
+}
+
+.grid.cards > div:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Admonitions customization */
+.admonition {
+    border-left: 4px solid #000000;
+}
+
+/* Logo styling */
+img[alt="Yuho Logo"] {
+    display: block;
+    margin: 0 auto;
+}
+
+/* Command line examples */
+.language-bash {
+    background-color: #2d2d2d;
+    color: #f8f8f2;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    margin: 1.5rem 0;
+}
+
+th {
+    background-color: #000000;
+    color: white;
+}
+
+/* Navigation improvements */
+.md-nav__item--active > .md-nav__link {
+    color: #000000;
+}
+
+/* Mermaid diagrams */
+.mermaid {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+/* Animated GitHub Octocat */
+.github-corner {
+    position: fixed;
+    top: 0;
+    border: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+/* Match GitHub corner background to navbar */
+.github-corner svg {
+    fill: var(--md-primary-fg-color);
+}
+
+/* Ensure proper colors in dark mode */
+[data-md-color-scheme="slate"] .github-corner svg {
+    fill: var(--md-primary-fg-color);
+}
+
+.github-corner:hover .octo-arm {
+    animation: octocat-wave 560ms ease-in-out;
+}
+
+/* GitHub Stats Popup */
+.github-stats-popup {
+    display: none;
+    position: absolute;
+    top: 90px;
+    right: 10px;
+    background: white;
+    border: 2px solid #000;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+    min-width: 200px;
+}
+
+.github-stats-popup.show {
+    display: block;
+}
+
+.github-stats-popup h3 {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    color: #000;
+}
+
+.github-stats-popup .stat {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+    color: #333;
+}
+
+.github-stats-popup .stat:last-child {
+    border-bottom: none;
+}
+
+.github-stats-popup .stat-label {
+    font-weight: bold;
+    color: #000;
+}
+
+.github-stats-popup .stat-value {
+    color: #666;
+}
+
+@keyframes octocat-wave {
+    0%, 100% {
+        transform: rotate(0);
+    }
+    20%, 60% {
+        transform: rotate(-25deg);
+    }
+    40%, 80% {
+        transform: rotate(10deg);
+    }
+}
+
+@media (max-width: 500px) {
+    .github-corner:hover .octo-arm {
+        animation: none;
+    }
+    .github-corner .octo-arm {
+        animation: octocat-wave 560ms ease-in-out;
+    }
+}
+
