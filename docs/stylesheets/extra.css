@@ -86,6 +86,11 @@ th {
     z-index: 1000;
 }
 
+/* Dark mode support for GitHub corner */
+[data-md-color-scheme="slate"] .github-corner svg {
+    fill: #424242 !important;
+}
+
 .github-corner:hover .octo-arm {
     animation: octocat-wave 560ms ease-in-out;
 }

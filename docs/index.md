@@ -8,15 +8,15 @@ Yuho helps law students, legal professionals, and researchers formalize legal re
 
 ## Key Features
 
-- **🎯 Advanced Type System**: Dependent types (BoundedInt, Positive, NonEmpty), generic types, type aliases, and struct inheritance
-- **📊 7 Transpilation Targets**: Mermaid, Alloy, JSON, LaTeX, English, TypeScript, and Singapore Law Gazette format
-- **✅ Formal Verification**: Z3 SMT solver integration for constraint verification and quantifier reasoning
-- **🔍 Module System**: Organize large codebases with imports and circular dependency detection
-- **🛠️ Full IDE Support**: Language Server Protocol (LSP) with diagnostics, hover, completion, and code actions
-- **🌐 WebAssembly**: Run Yuho in browsers with full parser and transpilation support
-- **📈 Decision Trees**: Interactive D3.js visualizations of match expression logic
-- **🚀 Production-Ready CLI**: 13 commands for parsing, checking, transpiling, and verification
-- **📝 Legal-Specific Features**: Citations, precedents, temporal logic, presumptions, and proviso clauses
+- **Advanced Type System**: Dependent types (BoundedInt, Positive, NonEmpty), generic types, type aliases, and struct inheritance
+- **7 Transpilation Targets**: Mermaid, Alloy, JSON, LaTeX, English, TypeScript, and Singapore Law Gazette format
+- **Formal Verification**: Z3 SMT solver integration for constraint verification and quantifier reasoning
+- **Module System**: Organize large codebases with imports and circular dependency detection
+- **Full IDE Support**: Language Server Protocol (LSP) with diagnostics, hover, completion, and code actions
+- **WebAssembly**: Run Yuho in browsers with full parser and transpilation support
+- **Decision Trees**: Interactive D3.js visualizations of match expression logic
+- **Production-Ready CLI**: 13 commands for parsing, checking, transpiling, and verification
+- **Legal-Specific Features**: Citations, precedents, temporal logic, presumptions, and proviso clauses
 
 ## Why Yuho?
 
@@ -62,11 +62,11 @@ func determineGuilty(Cheating case) {
 
 This code can then be:
 
-- ✅ **Type-checked** with dependent type and where clause validation
-- 🔍 **Formally verified** using Z3 SMT solver for quantifier reasoning
-- 📊 **Transpiled** to 7 different formats (Mermaid, Alloy, JSON, LaTeX, English, TypeScript, Gazette)
-- 🌳 **Visualized** as interactive decision trees with D3.js
-- 💻 **Edited** with full LSP support in VSCode, Neovim, or Emacs
+- **Type-checked** with dependent type and where clause validation
+- **Formally verified** using Z3 SMT solver for quantifier reasoning
+- **Transpiled** to 7 different formats (Mermaid, Alloy, JSON, LaTeX, English, TypeScript, Gazette)
+- **Visualized** as interactive decision trees with D3.js
+- **Edited** with full LSP support in VSCode, Neovim, or Emacs
 
 ## Getting Started
 

@@ -8,7 +8,7 @@ site_url: https://gabrielongzm.com/yuho
 
 
 # Copyright
-copyright: Copyright &copy; 2024 Gabriel Ong
+copyright: Copyright &copy; 2024 Gabriel Ong Zhe Mian
 
 # Theme configuration
 theme:
@@ -156,19 +156,8 @@ nav:
       - Changelog: about/changelog.md
       - License: about/license.md
 
-# Extra configuration
-extra:
-  version:
-    provider: mike
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/gongahkia/yuho-2
-  generator: false
-
-# Extra CSS and JavaScript
 extra_css:
   - stylesheets/extra.css
 
 extra_javascript:
   - javascripts/extra.js
-
